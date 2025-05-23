@@ -1,0 +1,62 @@
+Standard Git Flow: Merging to Main with Release Branches
+
+As per my experience the process is as follows:
+
+The main (or master) branch contains only production-ready code.
+
+A develop branch is created from main and is used for day-to-day development activities.
+
+For preparing a new production release, a dedicated release branch is created from develop. Hotfixes and final testing are performed here before merging to main.
+
+Workflow Summary
+
+main (or master): Stable, production-ready code.
+
+develop: Ongoing development and integration.
+
+release_*: Temporary branches for release preparation, hotfixes, and QA.
+
+1. Create the develop branch from main
+
+git checkout main
+git pull origin main
+git checkout -b develop
+git push -u origin develop
+
+2. Develop new features on the develop branch:
+
+git checkout develop
+git add .
+git commit -m "Add new features"
+git push
+
+3. Create a release branch from develop when ready to prepare a release
+
+git checkout develop
+git pull
+git checkout -b release_1.0
+git push -u origin release_1.0 
+
+4. Perform final fixes and hotfixes on the release branch as needed:
+
+# (make changes, add/commit)
+git add .
+git commit -m "Final adjustments for v1.0"
+git push 
+
+5. Merge the release branch into main to deploy to production:
+
+git checkout main
+git pull
+git merge release_1.0  or Merge the pull request in github once approved. 
+git push origin main
+
+6. Also merge the release branch back into develop to keep all branches in sync
+
+git checkout develop
+git pull
+git merge release_1.0 or create a another PR Merge it once approved. 
+git push origin develop
+
+
+7. Delete the release branches

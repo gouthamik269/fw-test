@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: java-app                     
+  namespace: argocd                     
+spec:
+  project: java                      
+  source:
+    repoURL: git@github.com:gouthamik269/fw-test.git
+    targetRevision: main                
+    path: helm_charts/java-app          
+    helm:
+      releaseName: java-app-release      
+  destination:
+    server: https://<EKS-API-ENDPOINT>
+    namespace: uat          
+  syncPolicy:
+    automated:                            
+      prune: true
+      selfHeal: true
+

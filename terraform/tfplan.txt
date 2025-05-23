@@ -1,0 +1,1637 @@
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create[0m
+ [36m<=[0m read (data resources)[0m
+
+Terraform will perform the following actions:
+
+[1m  # aws_eks_addon.addons["coredns"][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_addon" "addons" {
+      [32m+[0m[0m addon_name           = "coredns"
+      [32m+[0m[0m addon_version        = "v1.11.1-eksbuild.4"
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m cluster_name         = "fw-test-eks-cls"
+      [32m+[0m[0m configuration_values = (known after apply)
+      [32m+[0m[0m created_at           = (known after apply)
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m modified_at          = (known after apply)
+      [32m+[0m[0m tags_all             = (known after apply)
+    }
+
+[1m  # aws_eks_addon.addons["kube-proxy"][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_addon" "addons" {
+      [32m+[0m[0m addon_name           = "kube-proxy"
+      [32m+[0m[0m addon_version        = "v1.31.2-eksbuild.1"
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m cluster_name         = "fw-test-eks-cls"
+      [32m+[0m[0m configuration_values = (known after apply)
+      [32m+[0m[0m created_at           = (known after apply)
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m modified_at          = (known after apply)
+      [32m+[0m[0m tags_all             = (known after apply)
+    }
+
+[1m  # aws_eks_addon.addons["vpc-cni"][0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_addon" "addons" {
+      [32m+[0m[0m addon_name           = "vpc-cni"
+      [32m+[0m[0m addon_version        = "v1.18.1-eksbuild.1"
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m cluster_name         = "fw-test-eks-cls"
+      [32m+[0m[0m configuration_values = jsonencode(
+            {
+              [32m+[0m[0m enableNetworkPolicy = "true"
+            }
+        )
+      [32m+[0m[0m created_at           = (known after apply)
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m modified_at          = (known after apply)
+      [32m+[0m[0m tags_all             = (known after apply)
+    }
+
+[1m  # aws_route.eks_to_rds["1a"][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "eks_to_rds" {
+      [32m+[0m[0m destination_cidr_block    = "10.42.0.0/16"
+      [32m+[0m[0m id                        = (known after apply)
+      [32m+[0m[0m instance_id               = (known after apply)
+      [32m+[0m[0m instance_owner_id         = (known after apply)
+      [32m+[0m[0m network_interface_id      = (known after apply)
+      [32m+[0m[0m origin                    = (known after apply)
+      [32m+[0m[0m route_table_id            = (known after apply)
+      [32m+[0m[0m state                     = (known after apply)
+      [32m+[0m[0m vpc_peering_connection_id = (known after apply)
+    }
+
+[1m  # aws_route.eks_to_rds["1b"][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "eks_to_rds" {
+      [32m+[0m[0m destination_cidr_block    = "10.42.0.0/16"
+      [32m+[0m[0m id                        = (known after apply)
+      [32m+[0m[0m instance_id               = (known after apply)
+      [32m+[0m[0m instance_owner_id         = (known after apply)
+      [32m+[0m[0m network_interface_id      = (known after apply)
+      [32m+[0m[0m origin                    = (known after apply)
+      [32m+[0m[0m route_table_id            = (known after apply)
+      [32m+[0m[0m state                     = (known after apply)
+      [32m+[0m[0m vpc_peering_connection_id = (known after apply)
+    }
+
+[1m  # aws_route.eks_to_rds["1c"][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "eks_to_rds" {
+      [32m+[0m[0m destination_cidr_block    = "10.42.0.0/16"
+      [32m+[0m[0m id                        = (known after apply)
+      [32m+[0m[0m instance_id               = (known after apply)
+      [32m+[0m[0m instance_owner_id         = (known after apply)
+      [32m+[0m[0m network_interface_id      = (known after apply)
+      [32m+[0m[0m origin                    = (known after apply)
+      [32m+[0m[0m route_table_id            = (known after apply)
+      [32m+[0m[0m state                     = (known after apply)
+      [32m+[0m[0m vpc_peering_connection_id = (known after apply)
+    }
+
+[1m  # aws_route.rds_to_eks["1a"][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "rds_to_eks" {
+      [32m+[0m[0m destination_cidr_block    = "10.74.0.0/16"
+      [32m+[0m[0m id                        = (known after apply)
+      [32m+[0m[0m instance_id               = (known after apply)
+      [32m+[0m[0m instance_owner_id         = (known after apply)
+      [32m+[0m[0m network_interface_id      = (known after apply)
+      [32m+[0m[0m origin                    = (known after apply)
+      [32m+[0m[0m route_table_id            = (known after apply)
+      [32m+[0m[0m state                     = (known after apply)
+      [32m+[0m[0m vpc_peering_connection_id = (known after apply)
+    }
+
+[1m  # aws_route.rds_to_eks["1b"][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "rds_to_eks" {
+      [32m+[0m[0m destination_cidr_block    = "10.74.0.0/16"
+      [32m+[0m[0m id                        = (known after apply)
+      [32m+[0m[0m instance_id               = (known after apply)
+      [32m+[0m[0m instance_owner_id         = (known after apply)
+      [32m+[0m[0m network_interface_id      = (known after apply)
+      [32m+[0m[0m origin                    = (known after apply)
+      [32m+[0m[0m route_table_id            = (known after apply)
+      [32m+[0m[0m state                     = (known after apply)
+      [32m+[0m[0m vpc_peering_connection_id = (known after apply)
+    }
+
+[1m  # aws_route.rds_to_eks["1c"][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "rds_to_eks" {
+      [32m+[0m[0m destination_cidr_block    = "10.74.0.0/16"
+      [32m+[0m[0m id                        = (known after apply)
+      [32m+[0m[0m instance_id               = (known after apply)
+      [32m+[0m[0m instance_owner_id         = (known after apply)
+      [32m+[0m[0m network_interface_id      = (known after apply)
+      [32m+[0m[0m origin                    = (known after apply)
+      [32m+[0m[0m route_table_id            = (known after apply)
+      [32m+[0m[0m state                     = (known after apply)
+      [32m+[0m[0m vpc_peering_connection_id = (known after apply)
+    }
+
+[1m  # aws_vpc_peering_connection.peering-to-rds-vpc[0m will be created
+[0m  [32m+[0m[0m resource "aws_vpc_peering_connection" "peering-to-rds-vpc" {
+      [32m+[0m[0m accept_status = (known after apply)
+      [32m+[0m[0m auto_accept   = true
+      [32m+[0m[0m id            = (known after apply)
+      [32m+[0m[0m peer_owner_id = (known after apply)
+      [32m+[0m[0m peer_region   = (known after apply)
+      [32m+[0m[0m peer_vpc_id   = (known after apply)
+      [32m+[0m[0m tags          = {
+          [32m+[0m[0m "Name" = "eks-to-rds"
+        }
+      [32m+[0m[0m tags_all      = {
+          [32m+[0m[0m "Name" = "eks-to-rds"
+        }
+      [32m+[0m[0m vpc_id        = (known after apply)
+
+      [32m+[0m[0m accepter {
+          [32m+[0m[0m allow_remote_vpc_dns_resolution = true
+        }
+
+      [32m+[0m[0m requester {
+          [32m+[0m[0m allow_remote_vpc_dns_resolution = true
+        }
+    }
+
+[1m  # module.eks.data.tls_certificate.eks[0m will be read during apply
+  # (config refers to values not yet known)
+[0m [36m<=[0m[0m data "tls_certificate" "eks" {
+      [32m+[0m[0m certificates = (known after apply)
+      [32m+[0m[0m id           = (known after apply)
+      [32m+[0m[0m url          = (known after apply)
+    }
+
+[1m  # module.eks.aws_eks_cluster.eks-cluster[0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_cluster" "eks-cluster" {
+      [32m+[0m[0m arn                           = (known after apply)
+      [32m+[0m[0m bootstrap_self_managed_addons = true
+      [32m+[0m[0m certificate_authority         = (known after apply)
+      [32m+[0m[0m cluster_id                    = (known after apply)
+      [32m+[0m[0m created_at                    = (known after apply)
+      [32m+[0m[0m endpoint                      = (known after apply)
+      [32m+[0m[0m id                            = (known after apply)
+      [32m+[0m[0m identity                      = (known after apply)
+      [32m+[0m[0m name                          = "fw-test-eks-cls"
+      [32m+[0m[0m platform_version              = (known after apply)
+      [32m+[0m[0m role_arn                      = (known after apply)
+      [32m+[0m[0m status                        = (known after apply)
+      [32m+[0m[0m tags_all                      = (known after apply)
+      [32m+[0m[0m version                       = "1.32"
+
+      [32m+[0m[0m access_config (known after apply)
+
+      [32m+[0m[0m kubernetes_network_config (known after apply)
+
+      [32m+[0m[0m upgrade_policy (known after apply)
+
+      [32m+[0m[0m vpc_config {
+          [32m+[0m[0m cluster_security_group_id = (known after apply)
+          [32m+[0m[0m endpoint_private_access   = true
+          [32m+[0m[0m endpoint_public_access    = false
+          [32m+[0m[0m public_access_cidrs       = (known after apply)
+          [32m+[0m[0m security_group_ids        = (known after apply)
+          [32m+[0m[0m subnet_ids                = (known after apply)
+          [32m+[0m[0m vpc_id                    = (known after apply)
+        }
+    }
+
+[1m  # module.eks.aws_iam_role_policy_attachment.eks-cluster-AmazonEKSClusterPolicy[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "eks-cluster-AmazonEKSClusterPolicy" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
+      [32m+[0m[0m role       = "fw-test-eks-master-role"
+    }
+
+[1m  # module.eks.aws_iam_role_policy_attachment.eks-cluster-AmazonEKSServicePolicy[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "eks-cluster-AmazonEKSServicePolicy" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSServicePolicy"
+      [32m+[0m[0m role       = "fw-test-eks-master-role"
+    }
+
+[1m  # module.eks.aws_security_group.eks-cluster-master[0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "eks-cluster-master" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "Managed by Terraform"
+      [32m+[0m[0m egress                 = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m from_port        = 0
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "-1"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 0
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "10.42.0.0/16",
+                ]
+              [32m+[0m[0m from_port        = 0
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "tcp"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 443
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m name                   = "fw-test-eks-master-sg"
+      [32m+[0m[0m name_prefix            = (known after apply)
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Name" = "fw-test-eks-master-sg"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Name" = "fw-test-eks-master-sg"
+        }
+      [32m+[0m[0m vpc_id                 = (known after apply)
+    }
+
+[1m  # module.eks-iam-master-role.aws_iam_role.eks-iam-master-role[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "eks-iam-master-role" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Action    = "sts:AssumeRole"
+                      [32m+[0m[0m Effect    = "Allow"
+                      [32m+[0m[0m Principal = {
+                          [32m+[0m[0m Service = "eks.amazonaws.com"
+                        }
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m force_detach_policies = false
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = "fw-test-eks-master-role"
+      [32m+[0m[0m name_prefix           = (known after apply)
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags                  = {
+          [32m+[0m[0m "Name" = "fw-test-eks-master-role"
+        }
+      [32m+[0m[0m tags_all              = {
+          [32m+[0m[0m "Name" = "fw-test-eks-master-role"
+        }
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy (known after apply)
+    }
+
+[1m  # module.eks-iam-node-role.aws_iam_instance_profile.eks-node-profile[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_instance_profile" "eks-node-profile" {
+      [32m+[0m[0m arn         = (known after apply)
+      [32m+[0m[0m create_date = (known after apply)
+      [32m+[0m[0m id          = (known after apply)
+      [32m+[0m[0m name        = "fw-test-eks-node-instance-profile"
+      [32m+[0m[0m name_prefix = (known after apply)
+      [32m+[0m[0m path        = "/"
+      [32m+[0m[0m role        = "fw-test-eks-node-role"
+      [32m+[0m[0m tags_all    = (known after apply)
+      [32m+[0m[0m unique_id   = (known after apply)
+    }
+
+[1m  # module.eks-iam-node-role.aws_iam_role.eks-iam-node-role[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role" "eks-iam-node-role" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m assume_role_policy    = jsonencode(
+            {
+              [32m+[0m[0m Statement = [
+                  [32m+[0m[0m {
+                      [32m+[0m[0m Action    = "sts:AssumeRole"
+                      [32m+[0m[0m Effect    = "Allow"
+                      [32m+[0m[0m Principal = {
+                          [32m+[0m[0m Service = "ec2.amazonaws.com"
+                        }
+                    },
+                ]
+              [32m+[0m[0m Version   = "2012-10-17"
+            }
+        )
+      [32m+[0m[0m create_date           = (known after apply)
+      [32m+[0m[0m force_detach_policies = false
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m managed_policy_arns   = (known after apply)
+      [32m+[0m[0m max_session_duration  = 3600
+      [32m+[0m[0m name                  = "fw-test-eks-node-role"
+      [32m+[0m[0m name_prefix           = (known after apply)
+      [32m+[0m[0m path                  = "/"
+      [32m+[0m[0m tags                  = {
+          [32m+[0m[0m "Name" = "fw-test-eks-node-role"
+        }
+      [32m+[0m[0m tags_all              = {
+          [32m+[0m[0m "Name" = "fw-test-eks-node-role"
+        }
+      [32m+[0m[0m unique_id             = (known after apply)
+
+      [32m+[0m[0m inline_policy (known after apply)
+    }
+
+[1m  # module.eks-iam-node-role.aws_iam_role_policy_attachment.eks-node-AmazonEBSCSIDriverPolicy[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "eks-node-AmazonEBSCSIDriverPolicy" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEBSCSIDriverPolicy"
+      [32m+[0m[0m role       = "fw-test-eks-node-role"
+    }
+
+[1m  # module.eks-iam-node-role.aws_iam_role_policy_attachment.eks-node-AmazonEC2ContainerRegistryReadOnly[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "eks-node-AmazonEC2ContainerRegistryReadOnly" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+      [32m+[0m[0m role       = "fw-test-eks-node-role"
+    }
+
+[1m  # module.eks-iam-node-role.aws_iam_role_policy_attachment.eks-node-AmazonEFSReadOnly[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "eks-node-AmazonEFSReadOnly" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonElasticFileSystemReadOnlyAccess"
+      [32m+[0m[0m role       = "fw-test-eks-node-role"
+    }
+
+[1m  # module.eks-iam-node-role.aws_iam_role_policy_attachment.eks-node-AmazonEKSWorkerNodePolicy[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "eks-node-AmazonEKSWorkerNodePolicy" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy"
+      [32m+[0m[0m role       = "fw-test-eks-node-role"
+    }
+
+[1m  # module.eks-iam-node-role.aws_iam_role_policy_attachment.eks-node-AmazonEKS_CNI_Policy[0m will be created
+[0m  [32m+[0m[0m resource "aws_iam_role_policy_attachment" "eks-node-AmazonEKS_CNI_Policy" {
+      [32m+[0m[0m id         = (known after apply)
+      [32m+[0m[0m policy_arn = "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      [32m+[0m[0m role       = "fw-test-eks-node-role"
+    }
+
+[1m  # module.eks-vpc.aws_eip.nat_eip_1a[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eip" "nat_eip_1a" {
+      [32m+[0m[0m allocation_id        = (known after apply)
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m association_id       = (known after apply)
+      [32m+[0m[0m carrier_ip           = (known after apply)
+      [32m+[0m[0m customer_owned_ip    = (known after apply)
+      [32m+[0m[0m domain               = "vpc"
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m instance             = (known after apply)
+      [32m+[0m[0m ipam_pool_id         = (known after apply)
+      [32m+[0m[0m network_border_group = (known after apply)
+      [32m+[0m[0m network_interface    = (known after apply)
+      [32m+[0m[0m private_dns          = (known after apply)
+      [32m+[0m[0m private_ip           = (known after apply)
+      [32m+[0m[0m ptr_record           = (known after apply)
+      [32m+[0m[0m public_dns           = (known after apply)
+      [32m+[0m[0m public_ip            = (known after apply)
+      [32m+[0m[0m public_ipv4_pool     = (known after apply)
+      [32m+[0m[0m tags                 = {
+          [32m+[0m[0m "Name" = "nat-eip-1a"
+        }
+      [32m+[0m[0m tags_all             = {
+          [32m+[0m[0m "Name" = "nat-eip-1a"
+        }
+      [32m+[0m[0m vpc                  = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_eip.nat_eip_1b[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eip" "nat_eip_1b" {
+      [32m+[0m[0m allocation_id        = (known after apply)
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m association_id       = (known after apply)
+      [32m+[0m[0m carrier_ip           = (known after apply)
+      [32m+[0m[0m customer_owned_ip    = (known after apply)
+      [32m+[0m[0m domain               = "vpc"
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m instance             = (known after apply)
+      [32m+[0m[0m ipam_pool_id         = (known after apply)
+      [32m+[0m[0m network_border_group = (known after apply)
+      [32m+[0m[0m network_interface    = (known after apply)
+      [32m+[0m[0m private_dns          = (known after apply)
+      [32m+[0m[0m private_ip           = (known after apply)
+      [32m+[0m[0m ptr_record           = (known after apply)
+      [32m+[0m[0m public_dns           = (known after apply)
+      [32m+[0m[0m public_ip            = (known after apply)
+      [32m+[0m[0m public_ipv4_pool     = (known after apply)
+      [32m+[0m[0m tags                 = {
+          [32m+[0m[0m "Name" = "nat-eip-1b"
+        }
+      [32m+[0m[0m tags_all             = {
+          [32m+[0m[0m "Name" = "nat-eip-1b"
+        }
+      [32m+[0m[0m vpc                  = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_eip.nat_eip_1c[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_eip" "nat_eip_1c" {
+      [32m+[0m[0m allocation_id        = (known after apply)
+      [32m+[0m[0m arn                  = (known after apply)
+      [32m+[0m[0m association_id       = (known after apply)
+      [32m+[0m[0m carrier_ip           = (known after apply)
+      [32m+[0m[0m customer_owned_ip    = (known after apply)
+      [32m+[0m[0m domain               = "vpc"
+      [32m+[0m[0m id                   = (known after apply)
+      [32m+[0m[0m instance             = (known after apply)
+      [32m+[0m[0m ipam_pool_id         = (known after apply)
+      [32m+[0m[0m network_border_group = (known after apply)
+      [32m+[0m[0m network_interface    = (known after apply)
+      [32m+[0m[0m private_dns          = (known after apply)
+      [32m+[0m[0m private_ip           = (known after apply)
+      [32m+[0m[0m ptr_record           = (known after apply)
+      [32m+[0m[0m public_dns           = (known after apply)
+      [32m+[0m[0m public_ip            = (known after apply)
+      [32m+[0m[0m public_ipv4_pool     = (known after apply)
+      [32m+[0m[0m tags                 = {
+          [32m+[0m[0m "Name" = "nat-eip-1c"
+        }
+      [32m+[0m[0m tags_all             = {
+          [32m+[0m[0m "Name" = "nat-eip-1c"
+        }
+      [32m+[0m[0m vpc                  = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_internet_gateway.internet-gw[0m will be created
+[0m  [32m+[0m[0m resource "aws_internet_gateway" "internet-gw" {
+      [32m+[0m[0m arn      = (known after apply)
+      [32m+[0m[0m id       = (known after apply)
+      [32m+[0m[0m owner_id = (known after apply)
+      [32m+[0m[0m tags     = {
+          [32m+[0m[0m "Name" = "eks-igw"
+        }
+      [32m+[0m[0m tags_all = {
+          [32m+[0m[0m "Name" = "eks-igw"
+        }
+      [32m+[0m[0m vpc_id   = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_nat_gateway.nat-gateway-1a[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_nat_gateway" "nat-gateway-1a" {
+      [32m+[0m[0m allocation_id                      = (known after apply)
+      [32m+[0m[0m association_id                     = (known after apply)
+      [32m+[0m[0m connectivity_type                  = "public"
+      [32m+[0m[0m id                                 = (known after apply)
+      [32m+[0m[0m network_interface_id               = (known after apply)
+      [32m+[0m[0m private_ip                         = (known after apply)
+      [32m+[0m[0m public_ip                          = (known after apply)
+      [32m+[0m[0m secondary_private_ip_address_count = (known after apply)
+      [32m+[0m[0m secondary_private_ip_addresses     = (known after apply)
+      [32m+[0m[0m subnet_id                          = (known after apply)
+      [32m+[0m[0m tags                               = {
+          [32m+[0m[0m "Name" = "eks-natgw-1a"
+        }
+      [32m+[0m[0m tags_all                           = {
+          [32m+[0m[0m "Name" = "eks-natgw-1a"
+        }
+    }
+
+[1m  # module.eks-vpc.aws_nat_gateway.nat-gateway-1b[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_nat_gateway" "nat-gateway-1b" {
+      [32m+[0m[0m allocation_id                      = (known after apply)
+      [32m+[0m[0m association_id                     = (known after apply)
+      [32m+[0m[0m connectivity_type                  = "public"
+      [32m+[0m[0m id                                 = (known after apply)
+      [32m+[0m[0m network_interface_id               = (known after apply)
+      [32m+[0m[0m private_ip                         = (known after apply)
+      [32m+[0m[0m public_ip                          = (known after apply)
+      [32m+[0m[0m secondary_private_ip_address_count = (known after apply)
+      [32m+[0m[0m secondary_private_ip_addresses     = (known after apply)
+      [32m+[0m[0m subnet_id                          = (known after apply)
+      [32m+[0m[0m tags                               = {
+          [32m+[0m[0m "Name" = "eks-natgw-1b"
+        }
+      [32m+[0m[0m tags_all                           = {
+          [32m+[0m[0m "Name" = "eks-natgw-1b"
+        }
+    }
+
+[1m  # module.eks-vpc.aws_nat_gateway.nat-gateway-1c[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_nat_gateway" "nat-gateway-1c" {
+      [32m+[0m[0m allocation_id                      = (known after apply)
+      [32m+[0m[0m association_id                     = (known after apply)
+      [32m+[0m[0m connectivity_type                  = "public"
+      [32m+[0m[0m id                                 = (known after apply)
+      [32m+[0m[0m network_interface_id               = (known after apply)
+      [32m+[0m[0m private_ip                         = (known after apply)
+      [32m+[0m[0m public_ip                          = (known after apply)
+      [32m+[0m[0m secondary_private_ip_address_count = (known after apply)
+      [32m+[0m[0m secondary_private_ip_addresses     = (known after apply)
+      [32m+[0m[0m subnet_id                          = (known after apply)
+      [32m+[0m[0m tags                               = {
+          [32m+[0m[0m "Name" = "eks-natgw-1c"
+        }
+      [32m+[0m[0m tags_all                           = {
+          [32m+[0m[0m "Name" = "eks-natgw-1c"
+        }
+    }
+
+[1m  # module.eks-vpc.aws_route.private_nat-1a[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "private_nat-1a" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m nat_gateway_id         = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route.private_nat-1b[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "private_nat-1b" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m nat_gateway_id         = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route.private_nat-1c[0][0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "private_nat-1c" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m nat_gateway_id         = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route.public-routes-1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "public-routes-1a" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m gateway_id             = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route.public-routes-1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "public-routes-1b" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m gateway_id             = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route.public-routes-1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "public-routes-1c" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m gateway_id             = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table.private_route_table_1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "private_route_table_1a" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "eks-private_route_table-1a"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "eks-private_route_table-1a"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table.private_route_table_1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "private_route_table_1b" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "eks-private_route_table-1b"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "eks-private_route_table-1b"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table.private_route_table_1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "private_route_table_1c" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "eks-private_route_table-1c"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "eks-private_route_table-1c"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table.public_route_table_1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "public_route_table_1a" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "eks-public_route_table-1a"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "eks-public_route_table-1a"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table.public_route_table_1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "public_route_table_1b" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "eks-public_route_table-1b"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "eks-public_route_table-1b"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table.public_route_table_1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "public_route_table_1c" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "eks-public_route_table-1c"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "eks-public_route_table-1c"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table_association.private_route_table_association_1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private_route_table_association_1a" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table_association.private_route_table_association_1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private_route_table_association_1b" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table_association.private_route_table_association_1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private_route_table_association_1c" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table_association.public_route_table_association_1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public_route_table_association_1a" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table_association.public_route_table_association_1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public_route_table_association_1b" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_route_table_association.public_route_table_association_1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public_route_table_association_1c" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_subnet.private-subnet-1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "private-subnet-1a" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.74.32.0/19"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "eks-private-subnet-1a"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "eks-private-subnet-1a"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_subnet.private-subnet-1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "private-subnet-1b" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1b"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.74.64.0/19"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "eks-private-subnet-1b"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "eks-private-subnet-1b"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_subnet.private-subnet-1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "private-subnet-1c" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1c"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.74.96.0/19"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "eks-private-subnet-1c"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "eks-private-subnet-1c"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_subnet.public-subnet-1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "public-subnet-1a" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.74.0.0/22"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "eks-public-subnet-1a"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "eks-public-subnet-1a"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_subnet.public-subnet-1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "public-subnet-1b" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1b"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.74.4.0/22"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "eks-public-subnet-1b"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "eks-public-subnet-1b"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_subnet.public_subnet_1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "public_subnet_1c" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1c"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.74.8.0/22"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "eks-public-subnet-1c"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "eks-public-subnet-1c"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.eks-vpc.aws_vpc.fw_vpc[0m will be created
+[0m  [32m+[0m[0m resource "aws_vpc" "fw_vpc" {
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m cidr_block                           = "10.74.0.0/16"
+      [32m+[0m[0m default_network_acl_id               = (known after apply)
+      [32m+[0m[0m default_route_table_id               = (known after apply)
+      [32m+[0m[0m default_security_group_id            = (known after apply)
+      [32m+[0m[0m dhcp_options_id                      = (known after apply)
+      [32m+[0m[0m enable_dns_hostnames                 = true
+      [32m+[0m[0m enable_dns_support                   = true
+      [32m+[0m[0m enable_network_address_usage_metrics = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_tenancy                     = "default"
+      [32m+[0m[0m ipv6_association_id                  = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block                      = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_network_border_group = (known after apply)
+      [32m+[0m[0m main_route_table_id                  = (known after apply)
+      [32m+[0m[0m owner_id                             = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Name" = "eks-vpc"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Name" = "eks-vpc"
+        }
+    }
+
+[1m  # module.eks_node.data.aws_ssm_parameter.eks_ami_release_version[0m will be read during apply
+  # (depends on a resource or a module with changes pending)
+[0m [36m<=[0m[0m data "aws_ssm_parameter" "eks_ami_release_version" {
+      [32m+[0m[0m arn            = (known after apply)
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m insecure_value = (known after apply)
+      [32m+[0m[0m name           = "/aws/service/eks/optimized-ami/1.32/amazon-linux-2023/x86_64/standard/recommended/release_version"
+      [32m+[0m[0m type           = (known after apply)
+      [32m+[0m[0m value          = (sensitive value)
+      [32m+[0m[0m version        = (known after apply)
+    }
+
+[1m  # module.eks_node.aws_eks_node_group.eks-nodes[0m will be created
+[0m  [32m+[0m[0m resource "aws_eks_node_group" "eks-nodes" {
+      [32m+[0m[0m ami_type               = (known after apply)
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m capacity_type          = (known after apply)
+      [32m+[0m[0m cluster_name           = "fw-test-eks-cls"
+      [32m+[0m[0m disk_size              = 100
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_types         = [
+          [32m+[0m[0m "m6a.2xlarge",
+        ]
+      [32m+[0m[0m labels                 = {
+          [32m+[0m[0m "fw-rapid" = "dedicated"
+        }
+      [32m+[0m[0m node_group_name        = (known after apply)
+      [32m+[0m[0m node_group_name_prefix = (known after apply)
+      [32m+[0m[0m node_role_arn          = (known after apply)
+      [32m+[0m[0m release_version        = (sensitive value)
+      [32m+[0m[0m resources              = (known after apply)
+      [32m+[0m[0m status                 = (known after apply)
+      [32m+[0m[0m subnet_ids             = (known after apply)
+      [32m+[0m[0m tags                   = {
+          [32m+[0m[0m "Name" = "fw-test-worker-nodes"
+        }
+      [32m+[0m[0m tags_all               = {
+          [32m+[0m[0m "Name" = "fw-test-worker-nodes"
+        }
+      [32m+[0m[0m version                = "1.32"
+
+      [32m+[0m[0m node_repair_config (known after apply)
+
+      [32m+[0m[0m scaling_config {
+          [32m+[0m[0m desired_size = 3
+          [32m+[0m[0m max_size     = 4
+          [32m+[0m[0m min_size     = 3
+        }
+
+      [32m+[0m[0m taint {
+          [32m+[0m[0m effect = "NO_SCHEDULE"
+          [32m+[0m[0m key    = "dedicated"
+          [32m+[0m[0m value  = "fw-rapid"
+        }
+
+      [32m+[0m[0m update_config {
+          [32m+[0m[0m max_unavailable = 1
+        }
+    }
+
+[1m  # module.rds.aws_db_instance.postgresql[0m will be created
+[0m  [32m+[0m[0m resource "aws_db_instance" "postgresql" {
+      [32m+[0m[0m address                               = (known after apply)
+      [32m+[0m[0m allocated_storage                     = 50
+      [32m+[0m[0m apply_immediately                     = false
+      [32m+[0m[0m arn                                   = (known after apply)
+      [32m+[0m[0m auto_minor_version_upgrade            = true
+      [32m+[0m[0m availability_zone                     = (known after apply)
+      [32m+[0m[0m backup_retention_period               = (known after apply)
+      [32m+[0m[0m backup_target                         = (known after apply)
+      [32m+[0m[0m backup_window                         = (known after apply)
+      [32m+[0m[0m ca_cert_identifier                    = (known after apply)
+      [32m+[0m[0m character_set_name                    = (known after apply)
+      [32m+[0m[0m copy_tags_to_snapshot                 = false
+      [32m+[0m[0m database_insights_mode                = (known after apply)
+      [32m+[0m[0m db_name                               = (known after apply)
+      [32m+[0m[0m db_subnet_group_name                  = "mydb-subnet-group"
+      [32m+[0m[0m dedicated_log_volume                  = false
+      [32m+[0m[0m delete_automated_backups              = true
+      [32m+[0m[0m domain_fqdn                           = (known after apply)
+      [32m+[0m[0m endpoint                              = (known after apply)
+      [32m+[0m[0m engine                                = "aurora-postgresql"
+      [32m+[0m[0m engine_lifecycle_support              = (known after apply)
+      [32m+[0m[0m engine_version                        = "17.2"
+      [32m+[0m[0m engine_version_actual                 = (known after apply)
+      [32m+[0m[0m hosted_zone_id                        = (known after apply)
+      [32m+[0m[0m id                                    = (known after apply)
+      [32m+[0m[0m identifier                            = "mydb"
+      [32m+[0m[0m identifier_prefix                     = (known after apply)
+      [32m+[0m[0m instance_class                        = "db.t3.small"
+      [32m+[0m[0m iops                                  = (known after apply)
+      [32m+[0m[0m kms_key_id                            = (known after apply)
+      [32m+[0m[0m latest_restorable_time                = (known after apply)
+      [32m+[0m[0m license_model                         = (known after apply)
+      [32m+[0m[0m listener_endpoint                     = (known after apply)
+      [32m+[0m[0m maintenance_window                    = (known after apply)
+      [32m+[0m[0m master_user_secret                    = (known after apply)
+      [32m+[0m[0m master_user_secret_kms_key_id         = (known after apply)
+      [32m+[0m[0m monitoring_interval                   = 0
+      [32m+[0m[0m monitoring_role_arn                   = (known after apply)
+      [32m+[0m[0m multi_az                              = true
+      [32m+[0m[0m nchar_character_set_name              = (known after apply)
+      [32m+[0m[0m network_type                          = (known after apply)
+      [32m+[0m[0m option_group_name                     = (known after apply)
+      [32m+[0m[0m parameter_group_name                  = (known after apply)
+      [32m+[0m[0m password                              = (sensitive value)
+      [32m+[0m[0m performance_insights_enabled          = false
+      [32m+[0m[0m performance_insights_kms_key_id       = (known after apply)
+      [32m+[0m[0m performance_insights_retention_period = (known after apply)
+      [32m+[0m[0m port                                  = (known after apply)
+      [32m+[0m[0m publicly_accessible                   = false
+      [32m+[0m[0m replica_mode                          = (known after apply)
+      [32m+[0m[0m replicas                              = (known after apply)
+      [32m+[0m[0m resource_id                           = (known after apply)
+      [32m+[0m[0m skip_final_snapshot                   = false
+      [32m+[0m[0m snapshot_identifier                   = (known after apply)
+      [32m+[0m[0m status                                = (known after apply)
+      [32m+[0m[0m storage_throughput                    = (known after apply)
+      [32m+[0m[0m storage_type                          = (known after apply)
+      [32m+[0m[0m tags                                  = {
+          [32m+[0m[0m "Name" = "mydb"
+        }
+      [32m+[0m[0m tags_all                              = {
+          [32m+[0m[0m "Name" = "mydb"
+        }
+      [32m+[0m[0m timezone                              = (known after apply)
+      [32m+[0m[0m username                              = "masteruser"
+      [32m+[0m[0m vpc_security_group_ids                = (known after apply)
+    }
+
+[1m  # module.rds.aws_db_subnet_group.this[0m will be created
+[0m  [32m+[0m[0m resource "aws_db_subnet_group" "this" {
+      [32m+[0m[0m arn                     = (known after apply)
+      [32m+[0m[0m description             = "Managed by Terraform"
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m name                    = "mydb-subnet-group"
+      [32m+[0m[0m name_prefix             = (known after apply)
+      [32m+[0m[0m subnet_ids              = (known after apply)
+      [32m+[0m[0m supported_network_types = (known after apply)
+      [32m+[0m[0m tags                    = {
+          [32m+[0m[0m "Name" = "mydb-subnet-group"
+        }
+      [32m+[0m[0m tags_all                = {
+          [32m+[0m[0m "Name" = "mydb-subnet-group"
+        }
+      [32m+[0m[0m vpc_id                  = (known after apply)
+    }
+
+[1m  # module.rds.aws_rds_cluster.postgresql[0m will be created
+[0m  [32m+[0m[0m resource "aws_rds_cluster" "postgresql" {
+      [32m+[0m[0m allocated_storage                     = (known after apply)
+      [32m+[0m[0m apply_immediately                     = (known after apply)
+      [32m+[0m[0m arn                                   = (known after apply)
+      [32m+[0m[0m availability_zones                    = [
+          [32m+[0m[0m "us-east-1a",
+          [32m+[0m[0m "us-east-1b",
+          [32m+[0m[0m "us-east-1c",
+        ]
+      [32m+[0m[0m backup_retention_period               = 5
+      [32m+[0m[0m ca_certificate_identifier             = (known after apply)
+      [32m+[0m[0m ca_certificate_valid_till             = (known after apply)
+      [32m+[0m[0m cluster_identifier                    = "mydb-cluster"
+      [32m+[0m[0m cluster_identifier_prefix             = (known after apply)
+      [32m+[0m[0m cluster_members                       = (known after apply)
+      [32m+[0m[0m cluster_resource_id                   = (known after apply)
+      [32m+[0m[0m cluster_scalability_type              = (known after apply)
+      [32m+[0m[0m copy_tags_to_snapshot                 = false
+      [32m+[0m[0m database_insights_mode                = (known after apply)
+      [32m+[0m[0m database_name                         = "mydb"
+      [32m+[0m[0m db_cluster_parameter_group_name       = (known after apply)
+      [32m+[0m[0m db_subnet_group_name                  = (known after apply)
+      [32m+[0m[0m db_system_id                          = (known after apply)
+      [32m+[0m[0m delete_automated_backups              = true
+      [32m+[0m[0m enable_global_write_forwarding        = false
+      [32m+[0m[0m enable_http_endpoint                  = false
+      [32m+[0m[0m enable_local_write_forwarding         = false
+      [32m+[0m[0m endpoint                              = (known after apply)
+      [32m+[0m[0m engine                                = "aurora-postgresql"
+      [32m+[0m[0m engine_lifecycle_support              = (known after apply)
+      [32m+[0m[0m engine_mode                           = "provisioned"
+      [32m+[0m[0m engine_version                        = (known after apply)
+      [32m+[0m[0m engine_version_actual                 = (known after apply)
+      [32m+[0m[0m hosted_zone_id                        = (known after apply)
+      [32m+[0m[0m iam_roles                             = (known after apply)
+      [32m+[0m[0m id                                    = (known after apply)
+      [32m+[0m[0m kms_key_id                            = (known after apply)
+      [32m+[0m[0m master_password                       = (sensitive value)
+      [32m+[0m[0m master_user_secret                    = (known after apply)
+      [32m+[0m[0m master_user_secret_kms_key_id         = (known after apply)
+      [32m+[0m[0m master_username                       = "masteruser"
+      [32m+[0m[0m monitoring_interval                   = (known after apply)
+      [32m+[0m[0m monitoring_role_arn                   = (known after apply)
+      [32m+[0m[0m network_type                          = (known after apply)
+      [32m+[0m[0m performance_insights_kms_key_id       = (known after apply)
+      [32m+[0m[0m performance_insights_retention_period = (known after apply)
+      [32m+[0m[0m port                                  = (known after apply)
+      [32m+[0m[0m preferred_backup_window               = "07:00-09:00"
+      [32m+[0m[0m preferred_maintenance_window          = (known after apply)
+      [32m+[0m[0m reader_endpoint                       = (known after apply)
+      [32m+[0m[0m skip_final_snapshot                   = false
+      [32m+[0m[0m storage_encrypted                     = (known after apply)
+      [32m+[0m[0m storage_type                          = (known after apply)
+      [32m+[0m[0m tags_all                              = (known after apply)
+      [32m+[0m[0m vpc_security_group_ids                = (known after apply)
+    }
+
+[1m  # module.rds.aws_security_group.rds[0m will be created
+[0m  [32m+[0m[0m resource "aws_security_group" "rds" {
+      [32m+[0m[0m arn                    = (known after apply)
+      [32m+[0m[0m description            = "Allow PostgreSQL access"
+      [32m+[0m[0m egress                 = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "0.0.0.0/0",
+                ]
+              [32m+[0m[0m from_port        = 0
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "-1"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 0
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m ingress                = [
+          [32m+[0m[0m {
+              [32m+[0m[0m cidr_blocks      = [
+                  [32m+[0m[0m "10.42.0.0/16",
+                ]
+              [32m+[0m[0m from_port        = 5432
+              [32m+[0m[0m ipv6_cidr_blocks = []
+              [32m+[0m[0m prefix_list_ids  = []
+              [32m+[0m[0m protocol         = "tcp"
+              [32m+[0m[0m security_groups  = []
+              [32m+[0m[0m self             = false
+              [32m+[0m[0m to_port          = 5432
+                [90m# (1 unchanged attribute hidden)[0m[0m
+            },
+        ]
+      [32m+[0m[0m name                   = "rds-sg"
+      [32m+[0m[0m name_prefix            = (known after apply)
+      [32m+[0m[0m owner_id               = (known after apply)
+      [32m+[0m[0m revoke_rules_on_delete = false
+      [32m+[0m[0m tags_all               = (known after apply)
+      [32m+[0m[0m vpc_id                 = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_internet_gateway.internet-gw[0m will be created
+[0m  [32m+[0m[0m resource "aws_internet_gateway" "internet-gw" {
+      [32m+[0m[0m arn      = (known after apply)
+      [32m+[0m[0m id       = (known after apply)
+      [32m+[0m[0m owner_id = (known after apply)
+      [32m+[0m[0m tags     = {
+          [32m+[0m[0m "Name" = "rds-igw"
+        }
+      [32m+[0m[0m tags_all = {
+          [32m+[0m[0m "Name" = "rds-igw"
+        }
+      [32m+[0m[0m vpc_id   = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route.public-routes-1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "public-routes-1a" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m gateway_id             = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route.public-routes-1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "public-routes-1b" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m gateway_id             = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route.public-routes-1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_route" "public-routes-1c" {
+      [32m+[0m[0m destination_cidr_block = "0.0.0.0/0"
+      [32m+[0m[0m gateway_id             = (known after apply)
+      [32m+[0m[0m id                     = (known after apply)
+      [32m+[0m[0m instance_id            = (known after apply)
+      [32m+[0m[0m instance_owner_id      = (known after apply)
+      [32m+[0m[0m network_interface_id   = (known after apply)
+      [32m+[0m[0m origin                 = (known after apply)
+      [32m+[0m[0m route_table_id         = (known after apply)
+      [32m+[0m[0m state                  = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table.private_route_table_1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "private_route_table_1a" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "rds-private_route_table-1a"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "rds-private_route_table-1a"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table.private_route_table_1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "private_route_table_1b" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "rds-private_route_table-1b"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "rds-private_route_table-1b"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table.private_route_table_1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "private_route_table_1c" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "rds-private_route_table-1c"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "rds-private_route_table-1c"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table.public_route_table_1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "public_route_table_1a" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "rds-public_route_table-1a"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "rds-public_route_table-1a"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table.public_route_table_1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "public_route_table_1b" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "rds-public_route_table-1b"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "rds-public_route_table-1b"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table.public_route_table_1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table" "public_route_table_1c" {
+      [32m+[0m[0m arn              = (known after apply)
+      [32m+[0m[0m id               = (known after apply)
+      [32m+[0m[0m owner_id         = (known after apply)
+      [32m+[0m[0m propagating_vgws = (known after apply)
+      [32m+[0m[0m route            = (known after apply)
+      [32m+[0m[0m tags             = {
+          [32m+[0m[0m "Name" = "rds-public_route_table-1c"
+        }
+      [32m+[0m[0m tags_all         = {
+          [32m+[0m[0m "Name" = "rds-public_route_table-1c"
+        }
+      [32m+[0m[0m vpc_id           = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table_association.private_route_table_association_1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private_route_table_association_1a" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table_association.private_route_table_association_1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private_route_table_association_1b" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table_association.private_route_table_association_1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "private_route_table_association_1c" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table_association.public_route_table_association_1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public_route_table_association_1a" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table_association.public_route_table_association_1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public_route_table_association_1b" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_route_table_association.public_route_table_association_1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_route_table_association" "public_route_table_association_1c" {
+      [32m+[0m[0m id             = (known after apply)
+      [32m+[0m[0m route_table_id = (known after apply)
+      [32m+[0m[0m subnet_id      = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_subnet.private-subnet-1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "private-subnet-1a" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.42.32.0/19"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "rds-private-subnet-1a"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "rds-private-subnet-1a"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_subnet.private-subnet-1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "private-subnet-1b" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1b"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.42.64.0/19"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "rds-private-subnet-1b"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "rds-private-subnet-1b"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_subnet.private-subnet-1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "private-subnet-1c" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1c"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.42.96.0/19"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "rds-private-subnet-1c"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "rds-private-subnet-1c"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_subnet.public-subnet-1a[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "public-subnet-1a" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1a"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.42.0.0/22"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "rds-public-subnet-1a"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "rds-public-subnet-1a"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_subnet.public-subnet-1b[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "public-subnet-1b" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1b"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.42.4.0/22"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "rds-public-subnet-1b"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "rds-public-subnet-1b"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_subnet.public_subnet_1c[0m will be created
+[0m  [32m+[0m[0m resource "aws_subnet" "public_subnet_1c" {
+      [32m+[0m[0m arn                                            = (known after apply)
+      [32m+[0m[0m assign_ipv6_address_on_creation                = false
+      [32m+[0m[0m availability_zone                              = "us-east-1c"
+      [32m+[0m[0m availability_zone_id                           = (known after apply)
+      [32m+[0m[0m cidr_block                                     = "10.42.8.0/22"
+      [32m+[0m[0m enable_dns64                                   = false
+      [32m+[0m[0m enable_resource_name_dns_a_record_on_launch    = false
+      [32m+[0m[0m enable_resource_name_dns_aaaa_record_on_launch = false
+      [32m+[0m[0m id                                             = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_association_id                 = (known after apply)
+      [32m+[0m[0m ipv6_native                                    = false
+      [32m+[0m[0m map_public_ip_on_launch                        = false
+      [32m+[0m[0m owner_id                                       = (known after apply)
+      [32m+[0m[0m private_dns_hostname_type_on_launch            = (known after apply)
+      [32m+[0m[0m tags                                           = {
+          [32m+[0m[0m "Name" = "rds-public-subnet-1c"
+        }
+      [32m+[0m[0m tags_all                                       = {
+          [32m+[0m[0m "Name" = "rds-public-subnet-1c"
+        }
+      [32m+[0m[0m vpc_id                                         = (known after apply)
+    }
+
+[1m  # module.rds-vpc.aws_vpc.fw_vpc[0m will be created
+[0m  [32m+[0m[0m resource "aws_vpc" "fw_vpc" {
+      [32m+[0m[0m arn                                  = (known after apply)
+      [32m+[0m[0m cidr_block                           = "10.42.0.0/16"
+      [32m+[0m[0m default_network_acl_id               = (known after apply)
+      [32m+[0m[0m default_route_table_id               = (known after apply)
+      [32m+[0m[0m default_security_group_id            = (known after apply)
+      [32m+[0m[0m dhcp_options_id                      = (known after apply)
+      [32m+[0m[0m enable_dns_hostnames                 = true
+      [32m+[0m[0m enable_dns_support                   = true
+      [32m+[0m[0m enable_network_address_usage_metrics = (known after apply)
+      [32m+[0m[0m id                                   = (known after apply)
+      [32m+[0m[0m instance_tenancy                     = "default"
+      [32m+[0m[0m ipv6_association_id                  = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block                      = (known after apply)
+      [32m+[0m[0m ipv6_cidr_block_network_border_group = (known after apply)
+      [32m+[0m[0m main_route_table_id                  = (known after apply)
+      [32m+[0m[0m owner_id                             = (known after apply)
+      [32m+[0m[0m tags                                 = {
+          [32m+[0m[0m "Name" = "rds-vpc"
+        }
+      [32m+[0m[0m tags_all                             = {
+          [32m+[0m[0m "Name" = "rds-vpc"
+        }
+    }
+
+[1m  # module.s3.aws_s3_bucket.fw-test[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket" "fw-test" {
+      [32m+[0m[0m acceleration_status         = (known after apply)
+      [32m+[0m[0m acl                         = (known after apply)
+      [32m+[0m[0m arn                         = (known after apply)
+      [32m+[0m[0m bucket                      = "fw-test"
+      [32m+[0m[0m bucket_domain_name          = (known after apply)
+      [32m+[0m[0m bucket_prefix               = (known after apply)
+      [32m+[0m[0m bucket_regional_domain_name = (known after apply)
+      [32m+[0m[0m force_destroy               = false
+      [32m+[0m[0m hosted_zone_id              = (known after apply)
+      [32m+[0m[0m id                          = (known after apply)
+      [32m+[0m[0m object_lock_enabled         = (known after apply)
+      [32m+[0m[0m policy                      = (known after apply)
+      [32m+[0m[0m region                      = (known after apply)
+      [32m+[0m[0m request_payer               = (known after apply)
+      [32m+[0m[0m tags                        = {
+          [32m+[0m[0m "Name" = "fw-test"
+        }
+      [32m+[0m[0m tags_all                    = {
+          [32m+[0m[0m "Name" = "fw-test"
+        }
+      [32m+[0m[0m website_domain              = (known after apply)
+      [32m+[0m[0m website_endpoint            = (known after apply)
+
+      [32m+[0m[0m cors_rule (known after apply)
+
+      [32m+[0m[0m grant (known after apply)
+
+      [32m+[0m[0m lifecycle_rule (known after apply)
+
+      [32m+[0m[0m logging (known after apply)
+
+      [32m+[0m[0m object_lock_configuration (known after apply)
+
+      [32m+[0m[0m replication_configuration (known after apply)
+
+      [32m+[0m[0m server_side_encryption_configuration (known after apply)
+
+      [32m+[0m[0m versioning (known after apply)
+
+      [32m+[0m[0m website (known after apply)
+    }
+
+[1m  # module.s3.aws_s3_bucket_public_access_block.fw-test-bucket-access-block[0m will be created
+[0m  [32m+[0m[0m resource "aws_s3_bucket_public_access_block" "fw-test-bucket-access-block" {
+      [32m+[0m[0m block_public_acls       = true
+      [32m+[0m[0m block_public_policy     = true
+      [32m+[0m[0m bucket                  = (known after apply)
+      [32m+[0m[0m id                      = (known after apply)
+      [32m+[0m[0m ignore_public_acls      = true
+      [32m+[0m[0m restrict_public_buckets = true
+    }
+
+[1m  # module.s3.aws_vpc_endpoint.s3[0m will be created
+[0m  [32m+[0m[0m resource "aws_vpc_endpoint" "s3" {
+      [32m+[0m[0m arn                   = (known after apply)
+      [32m+[0m[0m cidr_blocks           = (known after apply)
+      [32m+[0m[0m dns_entry             = (known after apply)
+      [32m+[0m[0m id                    = (known after apply)
+      [32m+[0m[0m ip_address_type       = (known after apply)
+      [32m+[0m[0m network_interface_ids = (known after apply)
+      [32m+[0m[0m owner_id              = (known after apply)
+      [32m+[0m[0m policy                = (known after apply)
+      [32m+[0m[0m prefix_list_id        = (known after apply)
+      [32m+[0m[0m private_dns_enabled   = (known after apply)
+      [32m+[0m[0m requester_managed     = (known after apply)
+      [32m+[0m[0m route_table_ids       = (known after apply)
+      [32m+[0m[0m security_group_ids    = (known after apply)
+      [32m+[0m[0m service_name          = "com.amazonaws.us-east-1.s3"
+      [32m+[0m[0m service_region        = (known after apply)
+      [32m+[0m[0m state                 = (known after apply)
+      [32m+[0m[0m subnet_ids            = (known after apply)
+      [32m+[0m[0m tags                  = {
+          [32m+[0m[0m "Name" = "ec2-vpc-s3-endpoint"
+        }
+      [32m+[0m[0m tags_all              = {
+          [32m+[0m[0m "Name" = "ec2-vpc-s3-endpoint"
+        }
+      [32m+[0m[0m vpc_endpoint_type     = "Gateway"
+      [32m+[0m[0m vpc_id                = (known after apply)
+
+      [32m+[0m[0m dns_options (known after apply)
+
+      [32m+[0m[0m subnet_configuration (known after apply)
+    }
+
+[1mPlan:[0m 85 to add, 0 to change, 0 to destroy.
+[0m[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
